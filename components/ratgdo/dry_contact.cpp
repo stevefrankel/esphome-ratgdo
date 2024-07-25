@@ -89,7 +89,8 @@ namespace ratgdo {
         }
 
         void DryContact::door_action(DoorAction action)
-        {
+/* Steven: Do not check door state and ignore open/close if closed/opened
+            {
             if (action == DoorAction::OPEN && this->door_state_ != DoorState::CLOSED) {
                 ESP_LOGW(TAG, "The door is not closed. Ignoring door action: %s", DoorAction_to_string(action));
                 return;
@@ -98,7 +99,7 @@ namespace ratgdo {
                 ESP_LOGW(TAG, "The door is not open. Ignoring door action: %s", DoorAction_to_string(action));
                 return;
             }
-
+*/
             ESP_LOG1(TAG, "Door action: %s", DoorAction_to_string(action));
 
             if (action == DoorAction::OPEN) {
